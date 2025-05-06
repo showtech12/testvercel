@@ -3,6 +3,14 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+ 
+}
+
+.app header{
+  background-color: blueviolet;
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid brown;
 }
 
 .logo {
