@@ -7,10 +7,18 @@ import {
 } from "react-router-dom";
 
 
- import './index.css'
+
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Notfound from './pages/Notfound';
+import MyLayout from './layouts/Mylayout';
+//import Showlayout from './layouts/Showlayout';
+import Login from './pages/Login';
+import Showlayout from './layouts/Showlayout';
+import Form from './components/Form';
+import Report from './components/Report';
+import Home2 from './pages/Home2';
+
 // import App from './App.jsx'
 
 const router = createBrowserRouter([
@@ -20,7 +28,18 @@ const router = createBrowserRouter([
   },
   {
     path:'/',
-    element:<Home/>
+    element:<MyLayout/>,
+    children:[
+      {
+        path:'',
+        element:<Home/>
+      },
+      {
+        path:'/login',
+        element:<Login/>
+      }
+     
+  ]
   },
   {
     path:'/user/:id',
@@ -28,6 +47,17 @@ const router = createBrowserRouter([
       <span className='text-white'> my product children </span>
     </Products>
   },
+  
+  {
+    path:'/report',
+    element:<Report/>
+  },
+
+  {
+    path:'/home2',
+    element:<Home2/>
+  }
+ 
 
 ])
 
